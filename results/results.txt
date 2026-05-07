@@ -3,4 +3,3 @@ Project Results
 - Sentiment Analysis: in progress
 - Topic Modeling: in progress
 
-this project is still under development, results will be in final report
