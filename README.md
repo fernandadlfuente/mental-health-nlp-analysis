@@ -6,3 +6,9 @@ this project will analyze prublic online mental health support discussions using
 - sentiment analysis
 
 The goal is to understand emotional support patterns while still maintaining ethical awareness.
+
+## technologies
+- python
+- transformers
+- pandas
+- scikit-learn
