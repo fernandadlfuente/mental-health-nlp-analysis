@@ -1,10 +1,12 @@
-print("running sentiment analysis")
+from transformers import pipeline
+import pandas as pd
 
-def main():
-  print("analyzing emotional tone...")
-  print("classifying sentiment...")
-  print("sentiment analysis complete")
-  print("aggregating results...")
+classifier = pipeline("sentiment-analysis")
 
-if __name__== "__main__":
-  main()
+df = pd.read_csv("data/cleaned_dataset.csv")
+
+sample_texts = df['clean_text'].head(10)
+
+for text in sample_texts:
+  result = classifier(text[:512])
+  print(result)
