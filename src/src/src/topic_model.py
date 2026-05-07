@@ -1,10 +1,11 @@
-print("runnning topic modeling...")
+import pandas as pd
+from bertopic import BERTopic
 
-def main():
-  print("loading cleaned text...")
-  print("identifying themes...")
-  print("topic modeling complete")
-  print("extracting topics...")
+df = pd.read_csv("data/cleaned_dataset.csv")
 
-if __name__ == "__main__":
-  main()
+docs = df['clean_text'].tolist()
+
+topic_model = BERTopic()
+topics, probs = topic_model.fit_transform(docs)
+
+print(topic_model.get_topic_info())
